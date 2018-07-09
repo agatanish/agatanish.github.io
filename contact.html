@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Purple Maze</title> 
+  <meta charset="utf-8">    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Maontserrt" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="style/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style/css/plugins.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="style/css/color/blue.css" rel="stylesheet">
+  <link href="style/type/icons.css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="style/js/jquery.min.js"></script>
+  <script src="style/js/classie.js"></script> 
+  <script src="style/js/bootstrap.min.js"></script> 
+  <script src="style/js/plugins.js"></script> 
+  <script src="style/js/jquery.themepunch.tools.min.js"></script> 
+  <script src="style/js/scripts.js"></script>
+  
+  <style type="text/css">
+    html
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 15px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    color: #5b5b5b;
+    font-family: 'Karla', sans-serif;
+    background: #fafbfc;
+}
+
+  </style>
+<style>
+
+
+
+#map {
+    height: 400px
+}
+.contact-info {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.contact-info li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.contact-info i {
+    margin-right: 7px;
+    color: #70aed2;
+}
+.contact-info a {
+    color: inherit
+}
+.contact-info a:hover {
+    color: #70aed2
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  26. FORMS
+/*-----------------------------------------------------------------------------------*/
+select {
+    -webkit-appearance: none;
+    box-shadow: none !important;
+    width: 100% !important;
+    font-weight: 500;
+}
+label {
+    font-weight: inherit
+}
+.form-field label {
+    width: 100%
+}
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-weight: inherit;
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 40px;
+    color: inherit;
+    border: none;
+    border-radius:0;
+    background: rgba(29,29,33,0.06);
+    resize: none;
+    vertical-align: middle;
+    box-shadow: none;
+    transition: all 150ms ease-in;
+}
+.widget input {
+  margin-bottom: 0;
+}
+footer input {
+  background: rgba(0,0,0,0.15) !important;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    background: rgba(29,29,33,0.08);
+    box-shadow: none;
+}
+footer input:focus {
+  background: rgba(0,0,0,0.25) !important;
+}
+textarea {
+    height: 100%;
+    padding: 8px 13px;
+    margin-bottom: 15px;
+    min-height: 200px;
+    resize: vertical;
+    font-weight: inherit;
+}
+.form-container .form-field {
+    position: relative
+}
+.form-container .form-field i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 13px;
+    margin: 1px 0 0 0;
+    line-height: 40px;
+    color: #a3a3a3;
+    height: 38px;
+    line-height: 37px;
+    border-right: 1px solid rgba(0,0,0,0.15);
+    font-weight: normal;
+}
+.form-container .form-field input,
+.form-container .form-field select {
+    
+}
+.vanilla-form .btn {
+    display: block
+}
+.vanilla-form label.custom-select {
+    position: relative;
+    display: block;
+}
+.vanilla-form label.custom-select span {
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    right: -4px;
+    top: 0;
+    height: 40px;
+    width: 40px;
+    pointer-events: none;
+    padding: 15px 0 0 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.vanilla-form label.custom-select span::after {
+    content: '\e84c';
+    font-family: 'fontello';
+}
+.vanilla-form input.error,
+.vanilla-form textarea.error,
+.vanilla-form label.custom-select select.error,
+.vanilla-form label.custom-select select.error:active,
+.vanilla-form label.custom-select select.error:focus {
+    background: rgba(222,71,71,0.15);
+}
+.state-error,
+.btn.state-error:hover {
+    background: #de4747 !important;
+    color: #FFF;
+}
+.vanilla-form .radio-set {
+    margin-bottom: 10px
+}
+.vanilla-form .radio-set label {
+    margin-right: 10px
+}
+.vanilla-form input[type="radio"],
+.vanilla-form input[type="checkbox"] {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    height: 10px;
+}
+.vanilla-form input[type="radio"] + span,
+.vanilla-form input[type="checkbox"] + span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0,0,0,0.15);
+    text-align: center;
+    vertical-align: text-bottom;
+    position: relative;
+}
+.vanilla-form input[type="radio"] + span::after,
+.vanilla-form input[type="checkbox"] + span::after {
+    content: "";
+    display: inline-block;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.vanilla-form input[type="radio"]:focus + span,
+.vanilla-form input[type="checkbox"]:focus + span,
+.vanilla-form input[type="radio"]:active + span,
+.vanilla-form input[type="checkbox"]:active + span {
+    border-color: #70aed2
+}
+.vanilla-form input[type="radio"]:checked + span::after,
+.vanilla-form input[type="checkbox"]:checked + span::after {
+    opacity: 1
+}
+.vanilla-form input[type="radio"].error + span,
+.vanilla-form input[type="checkbox"].error + span {
+    border-color: #de4747
+}
+.vanilla-form input[type="radio"] + span {
+    border-radius: 100%
+}
+.vanilla-form input[type="radio"] + span::after {
+    border-radius: 100%;
+    background-color: #70aed2;
+    border-color: #70aed2;
+}
+.vanilla-form input[type="radio"]:checked + span,
+.vanilla-form input[type="checkbox"]:checked + span {
+    border: 1px solid #70aed2
+}
+.vanilla-form input[type="radio"]:checked + span::after {
+    border: 4px solid #ffffff
+}
+.vanilla-form input[type="checkbox"] + span::after {
+    height: 40%;
+    width: 70%;
+    background-color: transparent;
+    border: 0 solid #70aed2;
+    top: 9px;
+    left: 2px;
+    -webkit-transform: rotate(-45deg) translate(50%, -75%);
+    -moz-transform: rotate(-45deg) translate(50%, -75%);
+    -ms-transform: rotate(-45deg) translate(50%, -75%);
+    -o-transform: rotate(-45deg) translate(50%, -75%);
+    transform: rotate(-45deg) translate(50%, -75%);
+}
+.vanilla-form input[type="checkbox"]:checked + span::after {
+    border-left-width: 0.2em;
+    border-bottom-width: 0.2em;
+}
+.vanilla-form .notification-box {
+    display: block;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+.vanilla-form .notification-box.show-error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+.vanilla-form .notification-box.show-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+.searchform {
+    position: relative
+}
+.sidebar .searchform {
+    max-width: 300px
+}
+.searchform .btn {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    height: 40px !important;
+    font-weight: 800 !important;
+    font-size: 12px !important;
+    padding: 0 15px !important;
+    margin: 0;
+    
+}
+::-webkit-input-placeholder {
+    color: inherit !important;
+    font-weight: 500 !important;
+}
+:-moz-placeholder {
+    color: inherit !important;
+    font-weight: 500 !important;
+    opacity: 1;
+}
+::-moz-placeholder {
+    color: inherit !important;
+    font-weight: 500 !important;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    color: inherit !important;
+    font-weight: 500 !important;
+}
+.searchform .btn {
+    border-radius: 0;
+}
+.slideanim {visibility:hidden;}
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  border-top: 16px solid blue;
+ border-right: 16px solid green;
+ border-bottom: 16px solid red;
+ border-left: 16px solid pink;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+</head>
+</style>
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+
+
+<!-- Top Bar     -->
+
+<style type="text/css">
+	
+h5 {
+      color: #ffffff;
+      font-weight: 400;
+      padding: 2.2px 0;
+  }  
+
+.footer {
+  background: #7430a7;
+  padding: 5.5px 0;
+}
+.footer a {
+  color: white;
+  font-size: 20px;
+  padding: 8px;
+  border-right: 1px solid white;
+  transition: all .5s ease;
+}
+.footer a:first-child {
+  border-left: 1px solid white;
+}
+.footer a:hover {
+  color: black;
+}
+
+</style>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8 " style="background-color:#7430a7;">
+      <h5>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 	&#x2706  +919925760170 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &#9993  chetan.edi@gmail.com </h5>
+    </div>
+
+    <div class="col-sm-4" style="background-color:#7430a7;">
+    	<footer class="footer">
+  <div class="container text ">
+    <a href="https://www.facebook.com/Purple-Maze-217680262072072/"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/purplemaze7/"><i class="fa fa-twitter"></i></a>
+    <a href="https://www.instagram.com/purplemaze7/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/purplemaze7/"><i class="fa fa-google-plus"></i></a>
+    <a href="https://www.instagram.com/purplemaze7/"><i class="fa fa-skype"></i></a>
+  </div>
+</footer>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--  Nav Bar     -->
+
+<style type="text/css">
+
+@font-face{
+ font-family:'digital-clock-font';
+ src: url(digital-7.regular.ttf);
+}
+
+
+.navbar {
+    margin-top: 37px;
+    background-color: rgb(255,255,255,1);
+    width: 100% !important;
+    z-index: 9999;
+    border: 0;
+    font-size: 20px !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 1.42857143 !important;
+}
+nav.navbar{
+   -webkit-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+}
+
+.navbar-inverse {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+nav.navbar.transparent {
+  background-color:rgb(211,211,211,0.8);
+  margin-top: 0px;
+}
+
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #7430a7  !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: white;
+    color: white !important;
+}
+
+h8{
+    font-family: 'digital-clock-font';
+    font-size: 50px;
+    margin-left: 150px;
+    color: purple;
+  }
+
+
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#" ><h8> PURPLE MAZE </h8> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">ABOUT</a></li>
+        <li><a href="index.html">PRODUCTS</a></li>
+        <li><a href="gallery.html">PORTFOLIO</a></li>
+        <li><a href="exhibitions.html">EXHIBITIONS</a></li>
+        <li><a href="#">REACH US</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script type="text/javascript">
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 20) {
+    $('nav').addClass('transparent');
+  } else {
+    $('nav').removeClass('transparent');
+  }
+});
+</script>
+
+
+
+
+
+<div class="offset"></div>
+  <div id="map"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1xdEVYy8IZdBKJGQp_QpDWaNQT7ZHGhY&amp;sensor=false&amp;extension=.js"></script> 
+  <script> google.maps.event.addDomListener(window, 'load', init);
+  var map;
+  function init() {
+      var mapOptions = {
+          center: new google.maps.LatLng(21.194584, 72.869188),
+          zoom: 15,
+          zoomControl: true,
+          zoomControlOptions: {
+              style: google.maps.ZoomControlStyle.DEFAULT,
+          },
+          disableDoubleClickZoom: false,
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+          },
+          scaleControl: true,
+          scrollwheel: false,
+          streetViewControl: true,
+          draggable : true,
+          overviewMapControl: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{stylers:[{saturation:-100},{gamma:1}]},{elementType:"labels.text.stroke",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels.text",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels.icon",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"labels.text",stylers:[{visibility:"off"}]},{featureType:"poi.place_of_worship",elementType:"labels.icon",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"geometry",stylers:[{visibility:"simplified"}]},{featureType:"water",stylers:[{visibility:"on"},{saturation:50},{gamma:0},{hue:"#50a5d1"}]},{featureType:"administrative.neighborhood",elementType:"labels.text.fill",stylers:[{color:"#333333"}]},{featureType:"road.local",elementType:"labels.text",stylers:[{weight:0.5},{color:"#333333"}]},{featureType:"transit.station",elementType:"labels.icon",stylers:[{gamma:1},{saturation:50}]}]
+      }
+  
+      var mapElement = document.getElementById('map');
+      var map = new google.maps.Map(mapElement, mapOptions);
+      var locations = [
+          ['Purple Maze Pvt. Lmtd. ',21.194584 ,72.869188]
+      ];
+      for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+              icon: 'style/images/map-pin.png',
+              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+              map: map
+          });
+      }
+  }
+  </script>
+  <style type="text/css">
+    
+.light-wrapper {
+  background: #fafbfc;
+}
+
+.section-title.text-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-title {
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+.section-title span {
+  color: #70aed2
+}
+
+.divide10 {
+    width: 100%;
+    height: 10px;
+}
+
+.sidebox {
+    margin-top: 50px;
+    display: block;
+
+}
+
+.widget-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  line-height: 18px;
+    margin-bottom: 15px !important;
+}
+  </style>
+
+
+  <div class="light-wrapper">
+    <div class="container inner">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2 class="section-title" style="  padding-top: 100px;  margin-top: 0; color: #3b3b3b; margin-bottom: 10px; font-weight: 700; letter-spacing: -0.5px;font-family: 'Montserrat', sans-serif;">Get in Touch</h2>
+          <p>Purple Maze aims at providing  most innovative product range and the highest quality standards products at best prices to its customers.We ensure quick delivery, professional & freindly customer service, large inventory and assured fabric availability. We understand our customers completely and make sure to take care of their every need in the best and quickest way possible.</p>
+          <div class="divide10"></div>
+          <div class="form-container">
+            <form action="contact/vanilla-form.php" method="post" class="vanilla vanilla-form" novalidate="novalidate">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-field">
+                    <label>
+                      <input type="text" name="name" placeholder="Your name" required="required">
+                    </label>
+                  </div>
+                  <!--/.form-field --> 
+                </div>
+                <!--/column -->
+                <div class="col-sm-6">
+                  <div class="form-field">
+                    <label>
+                      <input type="email" name="email" placeholder="Your e-mail" required="required">
+                    </label>
+                  </div>
+                  <!--/.form-field --> 
+                </div>
+                <!--/column -->
+                <div class="col-sm-6">
+                  <div class="form-field">
+                    <label>
+                      <input type="tel" name="tel" placeholder="Phone">
+                    </label>
+                  </div>
+                  <!--/.form-field --> 
+                </div>
+                <!--/column -->
+                <div class="col-sm-6">
+                  <div class="form-field">
+                    <label class="custom-select">
+                      <select name="department" required="required">
+                        <option value="">Select Department</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Support">Customer Support</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <span><!-- fake select handler --></span> </label>
+                  </div>
+                  <!--/.form-field --> 
+                </div>
+                <!--/column --> 
+              </div>
+              <!--/.row -->
+              <textarea name="message" placeholder="Type your message here..." required="required"></textarea>
+              <div class="radio-set">
+                <label>Subject:</label>
+                <label>
+                  <input type="radio" name="subject" value="General">
+                  <span><!-- fake radio --></span> General</label>
+                <label>
+                  <input type="radio" name="subject" value="Hi">
+                  <span><!-- fake radio --></span> Say Hi</label>
+                <label>
+                  <input type="radio" name="subject" value="Other">
+                  <span><!-- fake radio --></span> Other</label>
+              </div>
+              <!--/.radio-set -->
+              <input type="submit" class="btn" value="Send" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">
+              <footer class="notification-box"></footer>
+            </form>
+            <!--/.vanilla-form --> 
+          </div>
+          <!--/.form-container --> 
+          
+        </div>
+        <!--/column -->
+        
+        <aside class="col-sm-4">
+          <div class="sidebox widget" style="margin-left: 20px;">
+            <h3 class="widget-title" style="  padding-top: 60px;  margin-top: 0; color: #3b3b3b; margin-bottom: 10px; font-weight: 700; letter-spacing: -0.5px;font-family: 'Montserrat', sans-serif;">Address</h3>
+            <p>We feel priviliged to assist you!</p>
+            <address>
+            <strong>Indigo Industries</strong><br>
+            4001-02 New Sardar Trader Market<br> Puna Kumbharia road, Surat<br>
+            <abbr title="Phone">P:</abbr> 00 (123) 456 78 90 <br>
+            <abbr title="Email">E:</abbr> <a href="mailto:#">chetan.edi@gmail.com</a>
+            </address>
+          </div>
+          <!-- /.widget --> 
+          
+        </aside>
+        <!--/column --> 
+        
+      </div>
+      <!--/.row --> 
+      
+    </div>
+    <!--/.container --> 
+  </div>
+  <!--/.light-wrapper -->
+  
+<hr>
+
+<!---Footer-->
+
+<style type="text/css">
+
+hr { 
+    width: 100px;
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
+
+  
+  .footer-distributed{
+  background-color: =rgb(255,255,255);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+
+  padding: 55px 50px;
+  margin-top: 0px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #000000;
+  font: normal 36px 'digital-clock-font', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #000000;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 35%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  #5383d3;
+  text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #fffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+
+}
+
+
+</style>
+
+
+
+
+<footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <h3>Purple Maze</h3>
+
+        <p class="footer-links">
+          <a href="index.html">Home</a>
+          ·
+          <a href="index.html">About Us</a>
+          ·
+          <a href="index.html">Products</a>
+          ·
+          <a href="exhibitions.html">Exhibitions</a>
+          ·
+          <a href="gallery.html">Portfolio</a>
+          ·
+          <a href="#">Reach Us</a>
+        </p>
+
+        <p class="footer-company-name">Purple Maze &copy; 2018</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker" style="margin-top: -15px"></i>
+          <p style="">4001-02 New Sardar Trader Market</br> Puna Kumbharia road, Surat</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 261 6512007</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">chetan.edi@gmail.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>Purple Maze</span>
+          What your homes dream about!
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="https://www.facebook.com/Purple-Maze-217680262072072/"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.facebook.com/Purple-Maze-217680262072072/"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.facebook.com/Purple-Maze-217680262072072/"><i class="fa fa-linkedin"></i></a>
+          
+
+        </div>
+
+      </div>
+
+    </footer>
+
+<script type="text/javascript">
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage,100);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+</body>
+
+</html>
